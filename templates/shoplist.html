@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Shop List - Online mall
+{% endblock title %}
+
+{% block shoplist %}
+active
+{% endblock shoplist %}
+
+{% block body %}
+{% load static %}
+
+        <main class="main">
+            <section class="section-1 product-collection appear-animate" data-animation-name="fadeIn" data-animation-delay="100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8"><h2 class="section-title" style="padding-top: 25px;">Shop List</h2></div>
+                        <div class="col-md-4 mt-1 section-title">
+                            <div class="header-icon header-search header-search-inline header-search-category w-lg-max text-right mt-0">
+                                <a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
+                                <form action="#" method="get">
+                                    <div class="header-search-wrapper">
+                                        <input type="search" class="form-control" name="q" id="q" placeholder="Search..." required="">
+                                        <button class="btn icon-magnifier p-0" type="submit"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row img-section">
+                        {% for shop in shops %}
+                        <div class="col-sm-6 col-6 product-default left-details product-list mb-2">
+                            <figure>
+                                <a href="{% url 'shop_detail' shop.name %}">
+                                    <img src="{% get_static_prefix %}assets/images/{{ shop.image }}" width="250" height="250" alt="product">
+                                </a>
+                            </figure>
+                            <div class="product-details">
+                                <h3 class="product-title"> <a href="{% url 'shop_detail' shop.name %}">{{ shop.name }}</a>
+                                </h3>
+                                <p class="product-description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+                                    Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                <div class="product-action">
+                                    <a href="{% url 'shop_detail' shop.name %}" class="btn btn-outline-info btn-rounded btn-md">
+                                        <i class="icon-shopping-cart"></i>
+                                        <span>Go to Shop</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <br>
+            <br>
+        </main>
+
+        <footer class="footer">
+{% endblock body %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create Account - Online mall
+{% endblock title %}
+
+
+{% block body %}
+{% load static %}
+
+		<main class="main">
+			<div class="page-header" style="background: no-repeat 60%/cover url('{% get_static_prefix %}assets/images/banner3.jpg');">
+				<div class="container d-flex flex-column align-items-center">
+					<h1 class="text-white">Register Account</h1>
+				</div>
+			</div>
+
+			<div class="container login-container">
+				<div class="row">
+					<div class="col-lg-10 mx-auto mt-5">
+						<div class="row justify-content-md-center text-center">
+							<div class="col-md-5">
+								<form method="POST">
+                                    {% csrf_token %}
+
+                                    <label for="email">
+										Email address
+										<span class="required">*</span>
+									</label>
+									<input type="email" class="form-input form-wide" id="email" required />
+
+									<label for="first_name">
+										First Name
+										<span class="required">*</span>
+									</label>
+									<input type="text" class="form-input form-wide" id="first_name" required />
+
+									<label for="last_name">
+										Last Name
+										<span class="required">*</span>
+									</label>
+									<input type="text" class="form-input form-wide" id="last_name" required />
+	
+									<label for="password">
+										Password
+										<span class="required">*</span>
+									</label>
+									<input type="password" class="form-input form-wide" id="password"
+										required />
+
+									<div class="custom-control custom-checkbox mb-0 mt-2">
+										<a href="/signin/"
+										class="forget-password text-dark form-footer-right">Already have an account? Login.
+										</a>
+									</div>
+	
+									<div class="form-footer mb-2">
+										<button type="submit" class="btn btn-dark btn-md w-100 mr-0">
+											Register
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer bg-dark">
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="widget">
+                                <h4 class="widget-title text-white">Online mall, Nigeria</h4>
+                                <ul class="contact-info">
+                                    <li>
+                                        <span class="contact-info-label">Phone:</span><a href="tel:">(123)
+											456-7890</a>
+                                    </li>
+                                    <li>
+                                        <span class="contact-info-label">Email:</span> <a href="mailto:mail@onlinemall.com">mail@Onlinemall.com</a>
+                                    </li>
+                                </ul>
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon icon-instagram"></a>
+                                    <a href="#" class="social-icon icon-twitter"></a>
+                                    <a href="#" class="social-icon fab fa-whatsapp"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="widget">
+                                <h4 class="widget-title text-white">Customer Service</h4>
+
+                                <ul class="links">
+                                    <li><a href="#">Help & FAQs</a></li>
+                                    <li><a href="#">Order Tracking</a></li>
+                                    <li><a href="#">Shipping & Delivery</a></li>
+                                    <li><a href="#">Orders History</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Corporate Sales</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="widget widget-newsletter">
+                                <h4 class="widget-title">Subscribe newsletter</h4>
+                                <p>Get all the latest information on events, sales and offers. Sign up for newsletter:
+                                </p>
+                                <form action="#" class="mb-0 mt-2">
+                                    <input type="email" class="form-control m-b-3" placeholder="Email address" required>
+
+                                    <input type="submit" class="btn btn-primary shadow-none" value="Subscribe">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock body %}

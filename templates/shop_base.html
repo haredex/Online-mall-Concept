@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    <meta name="keywords" content="online mall" />
+    <meta name="description" content="multi-shop system">
+    <link rel="icon" type="image/x-icon" href="{% get_static_prefix %}assets/images/favicon.png">
+
+    <link rel="stylesheet" href="{% get_static_prefix %}assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% get_static_prefix %}assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{% get_static_prefix %}assets/vendor/fontawesome-free/css/all.min.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="header-middle sticky-header" data-sticky-options="{'mobile': true}">
+                <div class="container">
+                    <div class="header-left col-lg-2 w-auto pl-0">
+                        <button class="mobile-menu-toggler text-primary mr-2" type="button">
+							<i class="fas fa-bars"></i>
+						</button>
+                        <a href="/" class="logo">
+                            <img src="{% get_static_prefix %}assets/images/logo-black.png">
+                        </a>
+                    </div>
+
+                    <div class="header-right w-lg-max">
+                        <div class="header-icon header-search header-search-inline header-search-category w-lg-max text-right mt-0">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
+                            <form action="#" method="get">
+                                <div class="header-search-wrapper">
+                                    <input type="search" class="form-control" name="q" id="q" placeholder="Search..." required>
+                                    <button class="btn icon-magnifier p-0" type="submit"></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <a href="/signin/" class="header-icon" title="login"><i class="icon-user-2"></i></a>
+
+                        <a href="#" class="header-icon" title="wishlist"><i class="icon-wishlist-2"></i></a>
+
+                        <div class="dropdown cart-dropdown">
+                            <a href="#" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                <i class="minicart-icon"></i>
+                                <span class="cart-count badge-circle">3</span>
+                            </a>
+
+
+                            <div class="cart-overlay"></div>
+
+                            <div class="dropdown-menu mobile-cart">
+                                <a href="#" title="Close (Esc)" class="btn-close">×</a>
+
+                                <div class="dropdownmenu-wrapper custom-scrollbar">
+                                    <div class="dropdown-cart-header">Shopping Cart</div>
+
+                                    <div class="dropdown-cart-products">
+                                        <div class="product">
+                                            <div class="product-details">
+                                                <h4 class="product-title">
+                                                    <a href="/product/">Product 1</a>
+                                                </h4>
+
+                                                <span class="cart-product-info">
+													<span class="cart-product-qty">1</span> × N10,000.00
+                                                </span>
+                                            </div>
+
+                                            <figure class="product-image-container">
+                                                <a href="/product/" class="product-image">
+                                                    <img src="{% get_static_prefix %}assets/images/products/image3.jpg" alt="product" width="80" height="80">
+                                                </a>
+
+                                                <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                            </figure>
+                                        </div>
+
+                                        <div class="product">
+                                            <div class="product-details">
+                                                <h4 class="product-title">
+                                                    <a href="/product/">Product 2</a>
+                                                </h4>
+
+                                                <span class="cart-product-info">
+													<span class="cart-product-qty">1</span> × N5,000.00
+                                                </span>
+                                            </div>
+
+                                            <figure class="product-image-container">
+                                                <a href="/product/" class="product-image">
+                                                    <img src="{% get_static_prefix %}assets/images/products/image2.jpg" alt="product" width="80" height="80">
+                                                </a>
+
+                                                <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                            </figure>
+                                        </div>
+
+                                        <div class="product">
+                                            <div class="product-details">
+                                                <h4 class="product-title">
+                                                    <a href="/product/">Product 3</a>
+                                                </h4>
+
+                                                <span class="cart-product-info">
+													<span class="cart-product-qty">1</span> × N2,000.00
+                                                </span>
+                                            </div>
+                                            <figure class="product-image-container">
+                                                <a href="/product/" class="product-image">
+                                                    <img src="{% get_static_prefix %}assets/images/products/image3.jpg" alt="product" width="80" height="80">
+                                                </a>
+                                                <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
+                                            </figure>
+                                        </div>
+                                    </div>
+
+                                    <div class="dropdown-cart-total">
+                                        <span>SUBTOTAL:</span>
+
+                                        <span class="cart-total-price float-right">N17,000.00</span>
+                                    </div>
+
+                                    <div class="dropdown-cart-action">
+                                        <a href="#" class="btn btn-gray btn-block view-cart">View
+											Cart</a>
+                                        <a href="#" class="btn btn-dark btn-block">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom sticky-header d-none d-lg-block" data-sticky-options="{'mobile': false}">
+                <div class="container">
+                    <nav class="main-nav w-100">
+                        <ul class="menu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/shoplist/">Shop List</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li class="float-right"><a href="#" class="pl-5">Join the mall</a></li>
+                            <li class="float-right"><a href="/signin/" class="pl-5">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="category-banner-container bg-gray">
+                <div class="category-banner banner text-uppercase" style="background: no-repeat 60%/cover url('{% get_static_prefix %}assets/images/banner3.jpg');">
+                    <div class="container position-relative">
+                        {% block shoplink %}{% endblock shoplink %}
+                    </div>
+                </div>
+            </div>
+
+            {% block body %}
+
+            {% endblock body %}
+            <div class="mb-3"></div>
+        </main>
+
+        <footer class="footer bg-dark">
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="widget">
+                                <h4 class="widget-title">Shop Details</h4>
+                                <ul class="contact-info">
+                                    {% block shopInfo %}
+                                    
+                                    {% endblock shopInfo %}
+                                </ul>
+                                <div class="social-icons">
+                                    {% block shopSocials %}
+                                    
+                                    {% endblock shopSocials %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="widget">
+                                <h4 class="widget-title">Customer Service</h4>
+
+                                <ul class="links">
+                                    <li><a href="#">Help & FAQs</a></li>
+                                    <li><a href="#">Order Tracking</a></li>
+                                    <li><a href="#">Shipping & Delivery</a></li>
+                                    <li><a href="#">Orders History</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Corporate Sales</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="widget widget-newsletter">
+                                <h4 class="widget-title">Subscribe newsletter</h4>
+                                <p>Get all the latest information on events, sales and offers. Sign up for newsletter:
+                                </p>
+                                <form action="#" class="mb-0">
+                                    <input type="email" class="form-control m-b-3" placeholder="Email address" required>
+
+                                    <input type="submit" class="btn btn-primary shadow-none" value="Subscribe">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+                    <p class="footer-copyright py-3 pr-sm-4 pr-0 mb-0">Online mall. &copy; 2022. Concept</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="loading-overlay">
+        <div class="bounce-loader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="mobile-menu-container">
+        <div class="mobile-menu-wrapper">
+            <span class="mobile-menu-close"><i class="fa fa-times"></i></span>
+            <nav class="mobile-nav">
+                <ul class="mobile-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/shoplist/">Shop List</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">About US</a></li>
+                </ul>
+
+                <ul class="mobile-menu">
+                    <li><a href="#">JOIN THE MALL</a></li>
+                    <li><a href="/signin/">LOG IN</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-icons mt-5">
+                <a href="#" class="social-icon"><i class="icon-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky-navbar">
+        <div class="sticky-info">
+            <a href="/">
+                <i class="icon-home"></i>Home
+            </a>
+        </div>
+        <div class="sticky-info">
+            <a href="shoplist/" class="">
+                <i class="icon-bars"></i>Shops
+            </a>
+        </div>
+        <div class="sticky-info">
+            <a href="#" class="">
+                <i class="icon-wishlist-2"></i>Wishlist
+            </a>
+        </div>
+        <div class="sticky-info">
+            <a href="/signin/" class="">
+                <i class="icon-user-2"></i>Account
+            </a>
+        </div>
+        <div class="sticky-info">
+            <a href="#" class="">
+                <i class="icon-shopping-cart position-relative">
+					<span class="cart-count badge-circle">3</span>
+				</i>Cart
+            </a>
+        </div>
+    </div>
+
+
+
+    <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+
+    <script src="{% get_static_prefix %}assets/js/jquery.min.js"></script>
+    <script src="{% get_static_prefix %}assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{% get_static_prefix %}assets/js/plugins.min.js"></script>
+    <script src="{% get_static_prefix %}assets/js/nouislider.min.js"></script>
+    <script src="{% get_static_prefix %}assets/js/main.min.js"></script>
+</body>
+</html>

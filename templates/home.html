@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Online mall - Concept
+{% endblock title %}
+
+{% block home %}
+active
+{% endblock home %}
+
+{% block body %}
+{% load static %}
+
+        <main class="main">
+            <section class="section-1">
+                <h2 class="d-none">---Home banner</h2>
+
+                <div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover" data-owl-options="{
+						'loop': false,
+						'navText': [ '<i class=icon-left-open-big>', '<i class=icon-right-open-big>' ]
+					}">
+
+                    <div class="banner">
+                        <img src="{% static 'assets/images/banner1.jpg' %}" style="background-color: #eee; height: 276px;" alt="slider-one">
+
+                        <div class="banner-layer banner-layer-middle">
+                            <h6 class=" appear-animate" data-animation-name="fadeInRightShorter" data-animation-delay="200">All your favorite stores</h6>
+                            <h1 class=" appear-animate" data-animation-name="fadeInRightShorter" data-animation-delay="700">ONE MALL</h1>
+                            <a href="shoplist/" class="btn btn-xl appear-animate" data-animation-name="fadeInRightShorter" data-animation-delay="950" role="button">View shops
+							<i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="banner text-right">
+                        <img src="{% static 'assets/images/banner2.jpg' %}" style="background-color: #eee; height: 276px;" alt="slider-two">
+
+                        <div class="banner-layer banner-layer-middle content-right">
+                            <h6 class=" appear-animate" data-animation-name="fadeInLeftShorter" data-animation-delay="200">Online Shopping</h6>
+                            <h1 class=" appear-animate" data-animation-name="fadeInLeftShorter" data-animation-delay="700">Redesigned</h1>
+                            <a href="shoplist/" class="btn btn-xl appear-animate" data-animation-name="fadeInLeftShorter" data-animation-delay="950" role="button">View shops
+							<i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section-3 product-collection appear-animate" data-animation-name="fadeIn" data-animation-delay="100">
+                <div class="container">
+                    <h2 class="section-title">FEATURED SHOPS</h2>
+                    <div class="row justify-content-md-center img-section">
+                        {% for shop in shops %}
+        
+                        <a href="{% url 'shop_detail' shop.name %}"><div class="col-md-2 mt-2">
+                            <div class="info-box info-box-img">
+                                <img src="{% get_static_prefix %}assets/images/{{ shop.image }} " width="800" height="524" />
+                                <div class="info-box-content">
+                                    <br>
+                                    <p class="info-desc">{{ shop.name }}</p>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="social-icons text-center">
+                                <a href="#" class="social-icon" target="_blank"><i class="icon-phone"></i></a>
+                                <a href="#" class="social-icon" target="_blank"><i class="icon-instagram"></i></a>
+                                <a href="#" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div></a>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </section>
+            <br>
+            <br>
+        </main>
+
+        <footer class="footer">
+            {% block footerContent %}
+            <div class="container">
+                <div class="feature-boxes-container">
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <div class="feature-box feature-rounded">
+                                <i class="fas fa-coins"></i>
+
+                                <div class="feature-box-content">
+                                    <h3>Reduced integration and running cost</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna, et dapib.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box feature-rounded">
+                                <i class="fas fa-project-diagram"></i>
+
+                                <div class="feature-box-content">
+                                    <h3>Store Autonomy</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna, et dapibus lacus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box feature-rounded">
+                                <i class="fas fa-sitemap"></i>
+
+                                <div class="feature-box-content">
+                                    <h3>Business analysis and strategic planning</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna, et dapib.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endblock footerContent %}
+
+{% endblock body %}
+            
